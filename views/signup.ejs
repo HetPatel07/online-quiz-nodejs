@@ -1,0 +1,50 @@
+<%- include('./partials/header.ejs') -%>
+    <div class="container h-100 ">
+
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-4">
+                <form action="/signup" method="post">
+
+                    <h2 class="text-center">Register</h2>
+                    <% if(boolValue ==false){ %>
+
+                        <div class="alert alert-danger" id="alertBtn" role="alert">
+                            Password and Confirm Password did not match .
+                        </div>
+                        <% } %>
+
+                            <% if(resultLength && resultLength > 0){ %>
+                                <div class="alert alert-danger" id="alertBtn" role="alert">
+                                    Email already registered .
+                                </div>
+                                <% } %>
+                                    <% if(success == true){ %>
+                                        <div class="alert alert-success" id="alertBtn" role="alert">
+                                            Registered succesfully .
+                                        </div>
+                                        <% } %>
+
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" id="pass" name="password" placeholder="Password" required="required">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" id="cpass" name="confirm_password" placeholder="Confirm Password" required="required">
+                                            </div>
+                                            <div class="form-group">
+                                                <span>Already have an accout <a href="/login">Login</a></span>
+                                            </div>
+                                            <div class="form-group ">
+                                                <button type="submit" class="btn btn-success btn-md btn-block" id="regBtn">Register Now</button>
+                                            </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    <%- include('./partials/footer.ejs') -%>

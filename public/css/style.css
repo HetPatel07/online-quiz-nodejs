@@ -1,0 +1,21 @@
+body,
+head {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+form {
+    padding: 50px 10px;
+    background-color: #f2f3f7;
+}
+
+form .form-group {
+    margin: 15px;
+}
+
+
+/* form .alert.alert-danger {
+    display: none;
+} */
