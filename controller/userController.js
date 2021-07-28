@@ -1,5 +1,6 @@
 const connection = require('../model/connection')
 
+
 let bool = true;
 let resultLength = 0;
 let success = false;
@@ -9,7 +10,7 @@ module.exports = {
 
     // Register Student
     getSignup: (req, res) => {
-        // res.render("signup", {})
+        // res.render("signup", {}
         res.render("signup", {
             boolValue: bool,
             resultLength: resultLength,
@@ -18,15 +19,18 @@ module.exports = {
     },
     postSignup: (req, res) => {
         // console.log(req.statusCode)
+
+
         let email = req.body.email
         let pass = req.body.password
         let cpass = req.body.confirm_password
+        let sem = req.body.sem
         var check = "SELECT * FROM users WHERE email = '" + email + "'";
         connection.query(check, (err, result, field) => {
             // console.log(result);
             if (result.length == 0) {
                 if (pass == cpass) {
-                    var sql = "INSERT INTO users (email, password) VALUES ('" + email + "', '" + pass + "')";
+                    var sql = "INSERT INTO users (email, password, sem) VALUES ('" + email + "', '" + pass + "', '" + sem + "')";
                     // if (count == 0) {
                     connection.query(sql, function(err, result) {
                         if (err) throw err;
